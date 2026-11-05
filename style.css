@@ -1,6 +1,33 @@
-header {background-color: #BFA2DE;
+body {
+    padding: 0px;
     margin: 0px;
-    padding: 20px;}
+}
 
-body {padding: 0px;
-    margin: 0px;}
+header {
+    background-color: #BFA2DE;
+    margin: 0px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#kazalo {
+    padding: 20px;
+}
+
+button {
+    font-size: 15px;
+    border: none;
+    background-color: #dac6ee;
+    border-radius: 4px;
+    margin: 8px;
+    padding: 4px;
+}
+
+button:hover {
+    background-color:#BFA2DE;
+}
+
+#domov {
+    
+}

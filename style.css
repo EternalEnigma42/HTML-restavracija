@@ -28,6 +28,167 @@ button:hover {
     background-color:#BFA2DE;
 }
 
-#domov {
-    
+.kategorija {
+    background-color: aliceblue;
+    width: 19%;
+    height: 20%;
+}
+
+#kategorije {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/* ---------- dopolnitve ---------- */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #faf7fd;
+}
+
+h1 {
+    margin: 0;
+    align-self: center;
+}
+
+h2, h3 {
+    color: #6b4a94;
+}
+
+a {
+    color: #6b4a94;
+}
+
+#kazalo {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    align-items: center;
+}
+
+/* trenutna stran */
+#kazalo button:not(:hover):has(b) {
+    background-color: #BFA2DE;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.uvod {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.glavni {
+    background-color: #BFA2DE;
+    padding: 10px 18px;
+    font-size: 16px;
+}
+
+.glavni:hover {
+    background-color: #a885cf;
+}
+
+.info {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.okvir {
+    flex: 1;
+    min-width: 200px;
+    background-color: #dac6ee;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.besedilo {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+/* obrazec */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+input, select, textarea {
+    font-size: 15px;
+    padding: 8px;
+    border: 1px solid #BFA2DE;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+form button {
+    align-self: flex-start;
+    margin: 20px 0 0 0;
+}
+
+/* jedilnik */
+#slika {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#slika img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: #dac6ee;
+}
+
+#naslovJedilnik {
+    margin: 10px 0;
+}
+
+#kategorije {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.kategorija {
+    margin: 0;
+    padding: 20px 10px;
+    width: calc(25% - 8px);
+    height: auto;
+}
+
+.kategorija:hover {
+    background-color: #dac6ee;
+}
+
+/* telefon */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    #kazalo {
+        justify-content: center;
+    }
+    .kategorija {
+        width: calc(50% - 5px);
+    }
 }

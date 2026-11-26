@@ -36,25 +36,6 @@
 <button class="kategorija">Brezalkoholne pijače</button>
 <button class="kategorija">Sladice</button>
 </section>
-<section id="jedi" class="besedilo"></section>
-<section id="jedi"></section>
 </main>
-<script>
-// Ob kliku na kategorijo prikaži jedi iz baze
-fetch('/api/jedi').then(r => r.json()).then(jedi => {
-  const seznam = document.getElementById('jedi');
-  document.querySelectorAll('.kategorija').forEach(gumb => {
-    gumb.onclick = () => {
-      seznam.innerHTML = '';
-      for (const jed of jedi.filter(j => j.kategorija === gumb.textContent)) {
-        const p = document.createElement('p');
-        p.textContent = jed.ime + ' – ' + jed.cena.toFixed(2) + ' €';
-        seznam.append(p);
-      }
-    };
-  });
-});
-</script>
-<script src="jedilnik.js"></script>
 </body>
 </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>Admin</title>
+<h1>Jedilnik – admin</h1>
+
+<!-- Obrazec za dodajanje nove jedi -->
+<form id="obrazec">
+  <input id="kategorija" placeholder="Kategorija (npr. Pizze)" required>
+  <input id="ime" placeholder="Ime jedi" required>
+  <input id="cena" type="number" step="0.1" placeholder="Cena" required>
+  <button>Dodaj</button>
+</form>
+
+<!-- Seznam vseh jedi -->
+<table id="tabela"></table>
+
+<script>
+// Pošlje zahtevo strežniku
+function pošlji(naslov, metoda, podatki) {
+  return fetch(naslov, {
+    method: metoda,
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(podatki)
+  });
+}
+
+// Prebere jedi iz baze in jih prikaže v tabeli
+async function naloži() {
+  const jedi = await (await fetch('/api/jedi')).json();
+  tabela.innerHTML = '';
+
+  for (const jed of jedi) {
+    const vrstica = tabela.insertRow();
+
+    // tri polja za urejanje
+    const kategorija = document.createElement('input');
+    const ime = document.createElement('input');
+    const cena = document.createElement('input');
+    kategorija.value = jed.kategorija;
+    ime.value = jed.ime;
+    cena.value = jed.cena;
+    for (const polje of [kategorija, ime, cena]) vrstica.insertCell().append(polje);
+
+    // gumb Shrani
+    const shrani = document.createElement('button');
+    shrani.textContent = 'Shrani';
+    shrani.onclick = () => pošlji('/api/jedi/' + jed.id, 'PUT',
+      { kategorija: kategorija.value, ime: ime.value, cena: Number(cena.value) });
+
+    // gumb Izbriši
+    const izbriši = document.createElement('button');
+    izbriši.textContent = 'Izbriši';
+    izbriši.onclick = async () => { await pošlji('/api/jedi/' + jed.id, 'DELETE'); naloži(); };
+
+    vrstica.insertCell().append(shrani, izbriši);
+  }
+}
+
+// Dodajanje nove jedi
+obrazec.onsubmit = async (e) => {
+  e.preventDefault();
+  await pošlji('/api/jedi', 'POST',
+    { kategorija: kategorija.value, ime: ime.value, cena: Number(cena.value) });
+  obrazec.reset();
+  naloži();
+};
+
+naloži();
+</script>

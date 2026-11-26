@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS restavracija CHARACTER SET utf8mb4;
+USE restavracija;
+
+CREATE TABLE IF NOT EXISTS rezervacije (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ime VARCHAR(100) NOT NULL,
+    tel VARCHAR(30) NOT NULL,
+    datum DATE NOT NULL,
+    ura TIME NOT NULL,
+    osebe INT NOT NULL,
+    opomba TEXT
+);

@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="sl-SI">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<title>Rezervacija</title>
-</head>
-<body>
-<header>
-<h1 id="naslov">HRANA</h1>
-<nav id="kazalo">
-<a href="osnovna.html"><button id="domov">DOMOV</button></a>
-<a href="jedilink.html"><button id="jedilnik">JEDILNIK</button></a>
-<a href="oNas.html"><button id="oNas">O NAS</button></a>
-<a href="kontakt.html"><button id="kontakt">KONTAKT</button></a>
-<button id="rezervacija"><b>REZERVACIJA</b></button>
-</nav>
-</header>
-<main>
-<section class="besedilo">
-<h2>REZERVACIJA</h2>
-<p>Izpolnite obrazec in rezervirajte mizo.</p>
-<form action="shrani.php" method="post">
-<label for="ime">Ime in priimek</label>
-<input type="text" id="ime" name="ime" required>
-<label for="tel">Telefon</label>
-<input type="tel" id="tel" name="tel" required>
-<label for="datum">Datum</label>
-<input type="date" id="datum" name="datum" required>
-<label for="ura">Ura</label>
-<input type="time" id="ura" name="ura" min="11:00" max="21:00" required>
-<label for="osebe">Število oseb</label>
-<select id="osebe" name="osebe">
-<option>1</option><option>2</option><option>3</option><option>4</option>
-<option>5</option><option>6</option><option>7</option><option>8</option>
-</select>
-<label for="opomba">Opomba</label>
-<textarea id="opomba" name="opomba" rows="3"></textarea>
-<button type="submit" class="glavni">Rezerviraj</button>
-</form>
-</section>
-</main>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <title>Rezervacija</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="naslov">HRANA</h1>
+            <nav id="kazalo">
+            <a href="osnovna.html"><button id="domov">DOMOV</button></a>
+            <a href="jedilink.html"><button id="jedilnik">JEDILNIK</button></a>
+            <a href="oNas.html"><button id="oNas">O NAS</button></a>
+            <a href="kontakt.html"><button id="kontakt">KONTAKT</button></a>
+            <button id="rezervacija"><b>REZERVACIJA</b></button>
+            </nav>
+        </header>
+        <main>
+            <section class="besedilo">
+                <h2>REZERVACIJA</h2>
+                <p>Izpolnite obrazec in rezervirajte mizo.</p>
+                <form action="shrani.php" method="post">
+                    <label for="ime">Ime in priimek</label>
+                    <input type="text" id="ime" name="ime" required>
+                    <label for="tel">Telefon</label>
+                    <input type="tel" id="tel" name="tel" required>
+                    <label for="datum">Datum</label>
+                    <input type="date" id="datum" name="datum" required>
+                    <label for="ura">Ura</label>
+                    <input type="time" id="ura" name="ura" min="11:00" max="21:00" required>
+                    <label for="osebe">Število oseb</label>
+                    <select id="osebe" name="osebe">
+                    <option>1</option><option>2</option><option>3</option><option>4</option>
+                    <option>5</option><option>6</option><option>7</option><option>8</option>
+                    </select>
+                    <label for="opomba">Opomba</label>
+                    <textarea id="opomba" name="opomba" rows="3"></textarea>
+                    button type="submit" class="glavni">Rezerviraj</button>
+                </form>
+            </section>
+        </main>
+    </body>
 </html>
